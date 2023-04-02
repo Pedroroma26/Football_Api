@@ -1,9 +1,9 @@
+require 'uri'
+require 'net/http'
+require 'openssl'
+
 class PagesController < ApplicationController
   def home
-    require 'uri'
-    require 'net/http'
-    require 'openssl'
-
     url = URI("https://v3.football.api-sports.io/standings?league=94&season=2022")
 
     http = Net::HTTP.new(url.host, url.port)
@@ -21,6 +21,6 @@ class PagesController < ApplicationController
     @season = @response["response"].first["league"]["season"]
     @league_logo_url = @response["response"].first["league"]["logo"]
     @standings = JSON.parse(response.body)["response"].first["league"]["standings"].first
-    @points =JSON.parse(response.body)["response"].first["league"]["standings"].first
+    @points = JSON.parse(response.body)["response"].first["league"]["standings"].first
   end
 end
