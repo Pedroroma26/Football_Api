@@ -12,7 +12,7 @@ class PagesController < ApplicationController
 
     request = Net::HTTP::Get.new(url)
     request["x-rapidapi-host"] = 'v3.football.api-sports.io'
-    request["x-rapidapi-key"] = '2adfb52bbc365c6b54b10253f5a169e4'
+    request["x-rapidapi-key"] = ENV["FOOTBALL_API_KEY"]
 
     response = http.request(request)
     @response = JSON.parse(response.body)
