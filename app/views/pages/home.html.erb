@@ -1,2 +1,27 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<container>
+  <div class="header">
+    <h1><%= @country %> - <%= @league_name %></h1>
+    <img src="<%= @league_logo_url %>" alt="League Logo">
+    <h2>Season: <%= @season %></h1>
+  </div>
+
+<hr />
+<table>
+  <tr>
+    <th>Rank</th>
+    <th>Points</th>
+    <th>Team</th>
+  </tr>
+
+<% @standings.each do |team| %>
+  <th><%= team['rank'] %></th>
+  <th><%= team["points"] %></th>
+  <img src="<%= team['team']["logo"] %>" alt="Team Logo"><%= team['team']['name'] %></th>
+<% end %>
+</table>
+
+<hr />
+
+<%= @response %>
+
+</container>
