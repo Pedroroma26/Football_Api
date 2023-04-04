@@ -39,7 +39,7 @@
 
 /node_modules
 # Ignore .env file containing credentials.
-.env*
+.env
 
 # Ignore Mac and Linux file system files
 *.swp

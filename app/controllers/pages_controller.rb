@@ -12,7 +12,7 @@ class PagesController < ApplicationController
 
     request = Net::HTTP::Get.new(url)
     request["x-rapidapi-host"] = 'v3.football.api-sports.io'
-    request["x-rapidapi-key"] = ENV["FOOTBALL_API_KEY"]
+    request["x-rapidapi-key"] = ENV['FOOTBALL_KEY']
 
     response = http.request(request)
     @response = JSON.parse(response.body)
@@ -24,3 +24,5 @@ class PagesController < ApplicationController
     @points = JSON.parse(response.body)["response"].first["league"]["standings"].first
   end
 end
+
+
