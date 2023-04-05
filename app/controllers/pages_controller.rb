@@ -24,5 +24,3 @@ class PagesController < ApplicationController
     @points = JSON.parse(response.body)["response"].first["league"]["standings"].first
   end
 end
-
-
