@@ -14,9 +14,11 @@
   </tr>
 
 <% @standings.each do |team| %>
-  <th><%= team['rank'] %></th>
-  <th><%= team["points"] %></th>
-  <img src="<%= team['team']["logo"] %>" alt="Team Logo"><%= team['team']['name'] %></th>
+  <tr>
+    <td><%= team['rank'] %></td>
+    <td><%= team["points"] %></td>
+    <td><img src="<%= team['team']["logo"] %>" alt="Team Logo"><%= team['team']['name'] %></td>
+  </tr>
 <% end %>
 </table>
 
