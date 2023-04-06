@@ -1,30 +1,39 @@
 <div class="container">
   <div class="header">
-    <h1><%= @country %> - <%= @league_name %></h1>
+    <h1><strong><%= @country %> - <%= @league_name %></strong></h1>
     <img src="<%= @league_logo_url %>" alt="League Logo">
-    <h2>Season: <%= @season %></h1>
+    <h2>Season: <strong><%= @season %></strong></h1>
   </div>
 
 <hr />
 
-<table>
-  <tr>
-    <th>Rank</th>
-    <th>Points</th>
-    <th>Team</th>
-  </tr>
-
-  <% @standings.each do |team| %>
-    <tr>
-      <td><%= team['rank'] %></td>
-      <td><%= team["points"] %></td>
-      <td><img src="<%= team['team']["logo"] %>" alt="Team Logo"><%= team['team']['name'] %></td>
+  <table class="table">
+    <tr style="border: 3px solid black">
+      <th style="text-align: center">Rank</th>
+      <th>Team</th>
+      <th style="text-align: center">Points</th>
+      <th style="text-align: center">Games</th>
+      <th style="text-align: center">Win</th>
+      <th style="text-align: center">Draw</th>
+      <th style="text-align: center">Lose</th>
+      <th style="text-align: center">Goals</th>
+      <th style="text-align: center">Goal Diff</th>
+      <th style="text-align: center">Form</th>
     </tr>
-  <% end %>
-</table>
 
-<hr />
-
-<%= @response %>
-
+    <% @standings.each do |team| %>
+      <tr>
+        <td style="text-align: center"><strong><%= team['rank'] %></strong></td>
+        <td><img src="<%= team['team']["logo"] %>" alt="Team Logo"><strong><%= team['team']['name'] %></strong></td>
+        <td style="text-align: center"><strong><%= team["points"] %></strong></td>
+        <td style="text-align: center"><%= team["all"]["played"] %></td>
+        <td style="text-align: center"><%= team["all"]["win"] %></td>
+        <td style="text-align: center"><%= team["all"]["draw"] %></td>
+        <td style="text-align: center"><%= team["all"]["lose"] %></td>
+        <td style="text-align: center"><%= team["all"]["goals"]["for"] %> : <%= team["all"]["goals"]["against"] %></td>
+        <td style="text-align: center"><%= team["goalsDiff"] %></td>
+        <td class="form-icon" style="text-align: center"><strong><%= team['form'] %></strong></td>
+      </tr>
+    <% end %>
+  </table>
 </div>

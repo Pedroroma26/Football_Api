@@ -1,5 +1,9 @@
 // Specific CSS for your home-page
 
+.container {
+  background-color: azure;
+}
+
 .header {
   text-align: center;
   font: bolder;
@@ -7,4 +11,30 @@
 
 .header h2 {
   text-align: left ;
+}
+
+.header img {
+  width: 15%;
+  height: 15%;
+}
+
+.table {
+  text-align: left;
+  border: 3px solid black;
+  border-collapse: collapse;
+}
+
+.table th {
+  font-size: 1.5em;
+  font: bolder;
+}
+
+.table td {
+  font-size: 1.3em
+}
+
+
+.table img {
+  width: 1.3em;
+  height: 1.3em;
 }
