@@ -2,6 +2,7 @@
 
 .container {
   background-color: azure;
+  padding: 0.8em;
 }
 
 .header {
@@ -9,13 +10,19 @@
   font: bolder;
 }
 
+.header h1 {
+  font-size: 2em;
+}
+
 .header h2 {
-  text-align: left ;
+  text-align: left;
+  font-size: 1.5em;
 }
 
 .header img {
-  width: 15%;
-  height: 15%;
+  margin: 0.8em;
+  width: 10%;
+  height: 10%;
 }
 
 .table {
@@ -25,7 +32,7 @@
 }
 
 .table th {
-  font-size: 1.5em;
+  font-size: 1.3em;
   font: bolder;
 }
 
