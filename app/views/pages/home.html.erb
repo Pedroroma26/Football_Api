@@ -23,7 +23,6 @@
       <% @standings.each do |team| %>
         <tr>
           <td style="text-align: center"><strong><%= team['rank'] %></strong></td>
-          
           <td><img src="<%= team['team']["logo"] %>" alt="Team Logo"><strong><%= team['team']['name'] %></strong></td>
           <td style="text-align: center"><%= team["all"]["played"] %></td>
           <td style="text-align: center"><%= team["all"]["win"] %></td>
